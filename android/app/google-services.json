@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "605074336433",
+    "project_id": "marys-floreria",
+    "storage_bucket": "marys-floreria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605074336433:android:70c1c3ff39f8494619d090",
+        "android_client_info": {
+          "package_name": "com.Marys.Floreria.admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAasXAxbtQIZF1TqQSWXgxyIrOH9G_YTXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605074336433:android:23a496a91fde309419d090",
+        "android_client_info": {
+          "package_name": "com.Marys.floreria.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAasXAxbtQIZF1TqQSWXgxyIrOH9G_YTXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605074336433:android:7bab79a9dea5d5f719d090",
+        "android_client_info": {
+          "package_name": "com.Marys.floreriaaa.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAasXAxbtQIZF1TqQSWXgxyIrOH9G_YTXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

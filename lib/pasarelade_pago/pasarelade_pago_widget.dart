@@ -79,8 +79,6 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<CartRecord>>(
       stream: queryCartRecord(
         queryBuilder: (cartRecord) => cartRecord
@@ -619,146 +617,150 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
                                       },
                                     ),
                                   ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 16.0, 20.0, 16.0),
-                                  child: TextFormField(
-                                    controller: _model.nombreenvioController,
-                                    focusNode: _model.nombreenvioFocusNode,
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelText: 'Nombre Del Destinatario',
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
+                                if (_model.radioButtonValue1 ==
+                                    'Envío a Domicilio')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 16.0, 20.0, 16.0),
+                                    child: TextFormField(
+                                      controller: _model.nombreenvioController,
+                                      focusNode: _model.nombreenvioFocusNode,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Nombre Del Destinatario',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                            ),
+                                        hintText: 'Nombre del Destinatario',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        contentPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                20.0, 24.0, 0.0, 24.0),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Montserrat',
                                           ),
-                                      hintText: 'Nombre del Destinatario',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                          ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      filled: true,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              20.0, 24.0, 0.0, 24.0),
+                                      validator: _model
+                                          .nombreenvioControllerValidator
+                                          .asValidator(context),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                        ),
-                                    validator: _model
-                                        .nombreenvioControllerValidator
-                                        .asValidator(context),
                                   ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 16.0, 20.0, 16.0),
-                                  child: TextFormField(
-                                    controller: _model.numeroenvioController,
-                                    focusNode: _model.numeroenvioFocusNode,
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      labelText: 'Teléfono del Destinatario',
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
+                                if (_model.radioButtonValue1 ==
+                                    'Envío a Domicilio')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 16.0, 20.0, 16.0),
+                                    child: TextFormField(
+                                      controller: _model.numeroenvioController,
+                                      focusNode: _model.numeroenvioFocusNode,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Teléfono del Destinatario',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                            ),
+                                        hintText: 'Teléfono del Destinatario',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        contentPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                20.0, 24.0, 0.0, 24.0),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Montserrat',
                                           ),
-                                      hintText: 'Teléfono del Destinatario',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                          ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      filled: true,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              20.0, 24.0, 0.0, 24.0),
+                                      validator: _model
+                                          .numeroenvioControllerValidator
+                                          .asValidator(context),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                        ),
-                                    validator: _model
-                                        .numeroenvioControllerValidator
-                                        .asValidator(context),
                                   ),
-                                ),
                                 if (_model.radioButtonValue1 ==
                                     'Envío a Domicilio')
                                   Padding(
@@ -2223,7 +2225,7 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
                 ),
                 Container(
                   width: double.infinity,
-                  height: 70.0,
+                  height: 55.0,
                   decoration: BoxDecoration(
                     color: Color(0xFF9E0510),
                     boxShadow: [
@@ -2276,29 +2278,14 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
                                   : null;
                           return FFButtonWidget(
                             onPressed: () async {
-                              if (_model.numeroenvioController.text == null ||
-                                  _model.numeroenvioController.text == '') {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'Es Necesario el Teléfono del Destinatario',
-                                      style: GoogleFonts.getFont(
-                                        'Montserrat',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                    ),
-                                    duration: Duration(milliseconds: 1800),
-                                    backgroundColor: Color(0xFFF40409),
-                                  ),
-                                );
-                              } else {
-                                if (_model.nombreenvioController.text == null ||
-                                    _model.nombreenvioController.text == '') {
+                              if (_model.radioButtonValue1 ==
+                                  'Envío a Domicilio') {
+                                if (_model.numeroenvioController.text == null ||
+                                    _model.numeroenvioController.text == '') {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(
-                                        'Es Necesario el Nombre del Destinatario',
+                                        'Es Necesario el Teléfono del Destinatario',
                                         style: GoogleFonts.getFont(
                                           'Montserrat',
                                           color: FlutterFlowTheme.of(context)
@@ -2310,12 +2297,13 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
                                     ),
                                   );
                                 } else {
-                                  if (_model.horarioValue == null ||
-                                      _model.horarioValue == '') {
+                                  if (_model.nombreenvioController.text ==
+                                          null ||
+                                      _model.nombreenvioController.text == '') {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                          'Debes escoger un horario de entrega',
+                                          'Es Necesario el Nombre del Destinatario',
                                           style: GoogleFonts.getFont(
                                             'Montserrat',
                                             color: FlutterFlowTheme.of(context)
@@ -2327,13 +2315,13 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
                                       ),
                                     );
                                   } else {
-                                    if (_model.calendarSelectedDay!.end <
-                                        getCurrentTimestamp) {
+                                    if (_model.horarioValue == null ||
+                                        _model.horarioValue == '') {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
                                           content: Text(
-                                            'Debes de escoger un día posterior al de hoy',
+                                            'Debes escoger un horario de entrega',
                                             style: GoogleFonts.getFont(
                                               'Montserrat',
                                               color:
@@ -2347,15 +2335,13 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
                                         ),
                                       );
                                     } else {
-                                      if (_model.yourNameController2.text ==
-                                              null ||
-                                          _model.yourNameController2.text ==
-                                              '') {
+                                      if (_model.calendarSelectedDay!.end <
+                                          getCurrentTimestamp) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              'Es obligatorio poner un número de WhatsApp',
+                                              'Debes de escoger un día posterior al de hoy',
                                               style: GoogleFonts.getFont(
                                                 'Montserrat',
                                                 color:
@@ -2369,13 +2355,15 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
                                           ),
                                         );
                                       } else {
-                                        if (_model.ciudadValue1 == null ||
-                                            _model.ciudadValue1 == '') {
+                                        if (_model.yourNameController2.text ==
+                                                null ||
+                                            _model.yourNameController2.text ==
+                                                '') {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             SnackBar(
                                               content: Text(
-                                                'Debes de Escoger la Ciudad de Envío',
+                                                'Es obligatorio poner un número de WhatsApp',
                                                 style: GoogleFonts.getFont(
                                                   'Montserrat',
                                                   color: FlutterFlowTheme.of(
@@ -2390,14 +2378,15 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
                                             ),
                                           );
                                         } else {
-                                          if (_model.uploadedFileUrl == null ||
-                                              _model.uploadedFileUrl == '') {
+                                          if (_model.ciudadValue1 == null ||
+                                              _model.ciudadValue1 == '') {
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(
                                                 content: Text(
-                                                  'Debes de Adjuntar un Comprobante de Pago',
-                                                  style: TextStyle(
+                                                  'Debes de Escoger la Ciudad de Envío',
+                                                  style: GoogleFonts.getFont(
+                                                    'Montserrat',
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
@@ -2410,128 +2399,387 @@ class _PasareladePagoWidgetState extends State<PasareladePagoWidget> {
                                               ),
                                             );
                                           } else {
-                                            var orderRecordReference =
-                                                OrderRecord.collection.doc();
-                                            await orderRecordReference.set({
-                                              ...createOrderRecordData(
-                                                name: currentUserDisplayName,
-                                                amount: pasareladePagoCartRecord
-                                                    ?.amount,
-                                                status: 'en espera',
-                                                createdAt: getCurrentTimestamp,
-                                                creator: currentUserReference,
-                                                cart: pasareladePagoCartRecord
-                                                    ?.reference,
-                                                nombre: _model
-                                                    .yourNameController1.text,
-                                                numero: int.tryParse(_model
-                                                    .yourNameController2.text),
-                                                dni: int.tryParse(_model
-                                                    .yourNameController3.text),
-                                                direccion: _model
-                                                    .yourNameController4.text,
-                                                referencias: _model
-                                                    .yourNameController5.text,
-                                                ciudad:
-                                                    _model.radioButtonValue1 ==
-                                                            'Envío a Domicilio'
-                                                        ? _model.ciudadValue1
-                                                        : _model.horarioValue,
-                                                pago: _model.uploadedFileUrl,
-                                                cupon: _model
-                                                    .yourNameController6.text,
-                                                dedicatoria: _model
-                                                    .dedicatoriaController.text,
-                                                fecha: _model
-                                                    .calendarSelectedDay?.end,
-                                                numeroenvio: int.tryParse(_model
-                                                    .numeroenvioController
-                                                    .text),
-                                                nombreenvio: _model
-                                                    .nombreenvioController.text,
-                                                horario: _model.horarioValue,
-                                              ),
-                                              ...mapToFirestore(
-                                                {
-                                                  'selectedItems':
-                                                      pasareladePagoCartRecord
-                                                          ?.selectedItemsList,
-                                                },
-                                              ),
-                                            });
-                                            _model.orden = OrderRecord
-                                                .getDocumentFromData({
-                                              ...createOrderRecordData(
-                                                name: currentUserDisplayName,
-                                                amount: pasareladePagoCartRecord
-                                                    ?.amount,
-                                                status: 'en espera',
-                                                createdAt: getCurrentTimestamp,
-                                                creator: currentUserReference,
-                                                cart: pasareladePagoCartRecord
-                                                    ?.reference,
-                                                nombre: _model
-                                                    .yourNameController1.text,
-                                                numero: int.tryParse(_model
-                                                    .yourNameController2.text),
-                                                dni: int.tryParse(_model
-                                                    .yourNameController3.text),
-                                                direccion: _model
-                                                    .yourNameController4.text,
-                                                referencias: _model
-                                                    .yourNameController5.text,
-                                                ciudad:
-                                                    _model.radioButtonValue1 ==
-                                                            'Envío a Domicilio'
-                                                        ? _model.ciudadValue1
-                                                        : _model.horarioValue,
-                                                pago: _model.uploadedFileUrl,
-                                                cupon: _model
-                                                    .yourNameController6.text,
-                                                dedicatoria: _model
-                                                    .dedicatoriaController.text,
-                                                fecha: _model
-                                                    .calendarSelectedDay?.end,
-                                                numeroenvio: int.tryParse(_model
-                                                    .numeroenvioController
-                                                    .text),
-                                                nombreenvio: _model
-                                                    .nombreenvioController.text,
-                                                horario: _model.horarioValue,
-                                              ),
-                                              ...mapToFirestore(
-                                                {
-                                                  'selectedItems':
-                                                      pasareladePagoCartRecord
-                                                          ?.selectedItemsList,
-                                                },
-                                              ),
-                                            }, orderRecordReference);
-
-                                            await currentUserReference!.update({
-                                              ...mapToFirestore(
-                                                {
-                                                  'orderList':
-                                                      FieldValue.arrayUnion([
-                                                    _model.orden?.reference
-                                                  ]),
-                                                },
-                                              ),
-                                            });
-
-                                            context.pushNamed(
-                                              'finalizado',
-                                              queryParameters: {
-                                                'orden': serializeParam(
-                                                  _model.orden,
-                                                  ParamType.Document,
+                                            if (_model.uploadedFileUrl ==
+                                                    null ||
+                                                _model.uploadedFileUrl == '') {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'Debes de Adjuntar un Comprobante de Pago',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: Duration(
+                                                      milliseconds: 1800),
+                                                  backgroundColor:
+                                                      Color(0xFFF40409),
                                                 ),
-                                              }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                'orden': _model.orden,
-                                              },
-                                            );
+                                              );
+                                            } else {
+                                              var orderRecordReference1 =
+                                                  OrderRecord.collection.doc();
+                                              await orderRecordReference1.set({
+                                                ...createOrderRecordData(
+                                                  name: currentUserDisplayName,
+                                                  amount:
+                                                      pasareladePagoCartRecord
+                                                          ?.amount,
+                                                  status: 'en espera',
+                                                  createdAt:
+                                                      getCurrentTimestamp,
+                                                  creator: currentUserReference,
+                                                  cart: pasareladePagoCartRecord
+                                                      ?.reference,
+                                                  nombre: _model
+                                                      .yourNameController1.text,
+                                                  numero: int.tryParse(_model
+                                                      .yourNameController2
+                                                      .text),
+                                                  dni: int.tryParse(_model
+                                                      .yourNameController3
+                                                      .text),
+                                                  direccion: _model
+                                                      .yourNameController4.text,
+                                                  referencias: _model
+                                                      .yourNameController5.text,
+                                                  ciudad:
+                                                      _model.radioButtonValue1 ==
+                                                              'Envío a Domicilio'
+                                                          ? _model.ciudadValue1
+                                                          : _model.horarioValue,
+                                                  pago: _model.uploadedFileUrl,
+                                                  cupon: _model
+                                                      .yourNameController6.text,
+                                                  dedicatoria: _model
+                                                      .dedicatoriaController
+                                                      .text,
+                                                  fecha: _model
+                                                      .calendarSelectedDay?.end,
+                                                  numeroenvio: int.tryParse(
+                                                      _model
+                                                          .numeroenvioController
+                                                          .text),
+                                                  nombreenvio: _model
+                                                      .nombreenvioController
+                                                      .text,
+                                                  horario: _model.horarioValue,
+                                                ),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'selectedItems':
+                                                        pasareladePagoCartRecord
+                                                            ?.selectedItemsList,
+                                                  },
+                                                ),
+                                              });
+                                              _model.orden = OrderRecord
+                                                  .getDocumentFromData({
+                                                ...createOrderRecordData(
+                                                  name: currentUserDisplayName,
+                                                  amount:
+                                                      pasareladePagoCartRecord
+                                                          ?.amount,
+                                                  status: 'en espera',
+                                                  createdAt:
+                                                      getCurrentTimestamp,
+                                                  creator: currentUserReference,
+                                                  cart: pasareladePagoCartRecord
+                                                      ?.reference,
+                                                  nombre: _model
+                                                      .yourNameController1.text,
+                                                  numero: int.tryParse(_model
+                                                      .yourNameController2
+                                                      .text),
+                                                  dni: int.tryParse(_model
+                                                      .yourNameController3
+                                                      .text),
+                                                  direccion: _model
+                                                      .yourNameController4.text,
+                                                  referencias: _model
+                                                      .yourNameController5.text,
+                                                  ciudad:
+                                                      _model.radioButtonValue1 ==
+                                                              'Envío a Domicilio'
+                                                          ? _model.ciudadValue1
+                                                          : _model.horarioValue,
+                                                  pago: _model.uploadedFileUrl,
+                                                  cupon: _model
+                                                      .yourNameController6.text,
+                                                  dedicatoria: _model
+                                                      .dedicatoriaController
+                                                      .text,
+                                                  fecha: _model
+                                                      .calendarSelectedDay?.end,
+                                                  numeroenvio: int.tryParse(
+                                                      _model
+                                                          .numeroenvioController
+                                                          .text),
+                                                  nombreenvio: _model
+                                                      .nombreenvioController
+                                                      .text,
+                                                  horario: _model.horarioValue,
+                                                ),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'selectedItems':
+                                                        pasareladePagoCartRecord
+                                                            ?.selectedItemsList,
+                                                  },
+                                                ),
+                                              }, orderRecordReference1);
+
+                                              await currentUserReference!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'orderList':
+                                                        FieldValue.arrayUnion([
+                                                      _model.orden?.reference
+                                                    ]),
+                                                  },
+                                                ),
+                                              });
+
+                                              context.pushNamed(
+                                                'finalizado',
+                                                queryParameters: {
+                                                  'orden': serializeParam(
+                                                    _model.orden,
+                                                    ParamType.Document,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'orden': _model.orden,
+                                                },
+                                              );
+                                            }
                                           }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              } else {
+                                if (_model.horarioValue == null ||
+                                    _model.horarioValue == '') {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Debes escoger un horario de entrega',
+                                        style: GoogleFonts.getFont(
+                                          'Montserrat',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                      ),
+                                      duration: Duration(milliseconds: 1800),
+                                      backgroundColor: Color(0xFFF40409),
+                                    ),
+                                  );
+                                } else {
+                                  if (_model.calendarSelectedDay!.end <
+                                      getCurrentTimestamp) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Debes de escoger un día posterior al de hoy',
+                                          style: GoogleFonts.getFont(
+                                            'Montserrat',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: Duration(milliseconds: 1800),
+                                        backgroundColor: Color(0xFFF40409),
+                                      ),
+                                    );
+                                  } else {
+                                    if (_model.yourNameController2.text ==
+                                            null ||
+                                        _model.yourNameController2.text == '') {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Es obligatorio poner un número de WhatsApp',
+                                            style: GoogleFonts.getFont(
+                                              'Montserrat',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
+                                          ),
+                                          duration:
+                                              Duration(milliseconds: 1800),
+                                          backgroundColor: Color(0xFFF40409),
+                                        ),
+                                      );
+                                    } else {
+                                      if (_model.uploadedFileUrl == null ||
+                                          _model.uploadedFileUrl == '') {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Debes de Adjuntar un Comprobante de Pago',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 1800),
+                                            backgroundColor: Color(0xFFF40409),
+                                          ),
+                                        );
+                                      } else {
+                                        if (_model.yourNameController1.text ==
+                                                null ||
+                                            _model.yourNameController1.text ==
+                                                '') {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Debes escribir tu nombre',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 1800),
+                                              backgroundColor:
+                                                  Color(0xFFF40409),
+                                            ),
+                                          );
+                                        } else {
+                                          var orderRecordReference2 =
+                                              OrderRecord.collection.doc();
+                                          await orderRecordReference2.set({
+                                            ...createOrderRecordData(
+                                              name: currentUserDisplayName,
+                                              amount: pasareladePagoCartRecord
+                                                  ?.amount,
+                                              status: 'en espera',
+                                              createdAt: getCurrentTimestamp,
+                                              creator: currentUserReference,
+                                              cart: pasareladePagoCartRecord
+                                                  ?.reference,
+                                              nombre: _model
+                                                  .yourNameController1.text,
+                                              numero: int.tryParse(_model
+                                                  .yourNameController2.text),
+                                              dni: int.tryParse(_model
+                                                  .yourNameController3.text),
+                                              direccion: _model
+                                                  .yourNameController4.text,
+                                              referencias: _model
+                                                  .yourNameController5.text,
+                                              ciudad:
+                                                  _model.radioButtonValue1 ==
+                                                          'Envío a Domicilio'
+                                                      ? _model.ciudadValue1
+                                                      : _model.ciudadValue2,
+                                              pago: _model.uploadedFileUrl,
+                                              cupon: _model
+                                                  .yourNameController6.text,
+                                              dedicatoria: _model
+                                                  .dedicatoriaController.text,
+                                              fecha: _model
+                                                  .calendarSelectedDay?.end,
+                                              numeroenvio: int.tryParse(_model
+                                                  .numeroenvioController.text),
+                                              nombreenvio: _model
+                                                  .nombreenvioController.text,
+                                              horario: _model.horarioValue,
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'selectedItems':
+                                                    pasareladePagoCartRecord
+                                                        ?.selectedItemsList,
+                                              },
+                                            ),
+                                          });
+                                          _model.orden1 =
+                                              OrderRecord.getDocumentFromData({
+                                            ...createOrderRecordData(
+                                              name: currentUserDisplayName,
+                                              amount: pasareladePagoCartRecord
+                                                  ?.amount,
+                                              status: 'en espera',
+                                              createdAt: getCurrentTimestamp,
+                                              creator: currentUserReference,
+                                              cart: pasareladePagoCartRecord
+                                                  ?.reference,
+                                              nombre: _model
+                                                  .yourNameController1.text,
+                                              numero: int.tryParse(_model
+                                                  .yourNameController2.text),
+                                              dni: int.tryParse(_model
+                                                  .yourNameController3.text),
+                                              direccion: _model
+                                                  .yourNameController4.text,
+                                              referencias: _model
+                                                  .yourNameController5.text,
+                                              ciudad:
+                                                  _model.radioButtonValue1 ==
+                                                          'Envío a Domicilio'
+                                                      ? _model.ciudadValue1
+                                                      : _model.ciudadValue2,
+                                              pago: _model.uploadedFileUrl,
+                                              cupon: _model
+                                                  .yourNameController6.text,
+                                              dedicatoria: _model
+                                                  .dedicatoriaController.text,
+                                              fecha: _model
+                                                  .calendarSelectedDay?.end,
+                                              numeroenvio: int.tryParse(_model
+                                                  .numeroenvioController.text),
+                                              nombreenvio: _model
+                                                  .nombreenvioController.text,
+                                              horario: _model.horarioValue,
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'selectedItems':
+                                                    pasareladePagoCartRecord
+                                                        ?.selectedItemsList,
+                                              },
+                                            ),
+                                          }, orderRecordReference2);
+
+                                          await currentUserReference!.update({
+                                            ...mapToFirestore(
+                                              {
+                                                'orderList':
+                                                    FieldValue.arrayUnion([
+                                                  _model.orden1?.reference
+                                                ]),
+                                              },
+                                            ),
+                                          });
+
+                                          context.pushNamed(
+                                            'finalizado',
+                                            queryParameters: {
+                                              'orden': serializeParam(
+                                                _model.orden1,
+                                                ParamType.Document,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'orden': _model.orden1,
+                                            },
+                                          );
                                         }
                                       }
                                     }

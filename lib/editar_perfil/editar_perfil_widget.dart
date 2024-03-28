@@ -61,8 +61,6 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<DestinoRecord>>(
       stream: queryDestinoRecord(
         queryBuilder: (destinoRecord) => destinoRecord.orderBy('Ciudad'),

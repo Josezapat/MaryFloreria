@@ -123,8 +123,6 @@ class _ItemDetailWidgetState extends State<ItemDetailWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<CartRecord>>(
       stream: queryCartRecord(
         queryBuilder: (cartRecord) => cartRecord

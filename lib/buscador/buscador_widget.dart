@@ -43,8 +43,6 @@ class _BuscadorWidgetState extends State<BuscadorWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<ItemsRecord>>(
       stream: queryItemsRecord(
         queryBuilder: (itemsRecord) => itemsRecord.where(

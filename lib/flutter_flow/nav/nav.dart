@@ -426,9 +426,9 @@ class FFRoute {
                   child: Center(
                     child: Image.asset(
                       'assets/images/logo_marys.png',
-                      width: 300.0,
-                      height: 160.0,
-                      fit: BoxFit.fitHeight,
+                      width: 250.0,
+                      height: 150.0,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 )

@@ -44,8 +44,6 @@ class _FinalizadoWidgetState extends State<FinalizadoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<CartRecord>>(
       stream: queryCartRecord(
         queryBuilder: (cartRecord) => cartRecord

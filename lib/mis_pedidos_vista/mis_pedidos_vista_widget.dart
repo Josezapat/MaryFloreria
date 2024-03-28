@@ -45,8 +45,6 @@ class _MisPedidosVistaWidgetState extends State<MisPedidosVistaWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<OrderRecord>>(
       stream: queryOrderRecord(
         queryBuilder: (orderRecord) => orderRecord.where(

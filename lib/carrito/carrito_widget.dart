@@ -117,8 +117,6 @@ class _CarritoWidgetState extends State<CarritoWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<CartRecord>>(
       stream: queryCartRecord(
         queryBuilder: (cartRecord) => cartRecord
@@ -965,7 +963,7 @@ class _CarritoWidgetState extends State<CarritoWidget>
                 ),
                 Container(
                   width: double.infinity,
-                  height: 70.0,
+                  height: 55.0,
                   decoration: BoxDecoration(
                     color: Color(0xFF9E0510),
                     boxShadow: [

@@ -79,6 +79,8 @@ class PasareladePagoModel extends FlutterFlowModel<PasareladePagoWidget> {
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   OrderRecord? orden;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  OrderRecord? orden1;
 
   /// Initialization and disposal methods.
 
